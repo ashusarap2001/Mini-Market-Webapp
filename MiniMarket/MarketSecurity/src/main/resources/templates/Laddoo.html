@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mini Market</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+
+    <link href="img/favicon.ico" rel="icon">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+   
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border px-3 mr-1">Mini</span>Market</h1>
+                </a>
+            </div>
+            <div class="col-lg-6 col-6 text-left">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-3 col-6 text-right">
+                <a href="user/cart.html" class="btn border">
+                    <i class="fas fa-shopping-cart text-primary"></i>
+                     <span class="badge" th:text="${cart_count}"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Grocery<i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="Atta.html" class="dropdown-item">Atta</a>
+                                <a href="masala.html" class="dropdown-item">Masala</a>
+                                <a href="chatni.html" class="dropdown-item">Chutney</a>
+                            </div>
+                        </div>
+                                                <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Sweets <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="Laddoo.html" class="dropdown-item">Laddo</a>
+                                <a href="Candy.html" class="dropdown-item">Candy</a>
+                                
+                            </div>
+                        </div>
+                        
+                           <div class="nav-item dropdown">
+                            <a href="#" class="nav-link" data-toggle="dropdown">Other <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="Snacks.html" class="dropdown-item">Snacks</a>
+                                <a href="more.html" class="dropdown-item">More Products</a>
+                               
+                            </div>
+                        </div>
+                        
+                   
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                        
+                            <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0">
+                           <a href="login" class="nav-item nav-link">Login</a>
+                            <a href="regi.html" class="nav-item nav-link">Register</a>
+                        </div>
+                    </div>
+                </nav>
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid" src="img/front1.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order of masala</h4>
+                                    <a href="masala.html" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="img/front3.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="Laddoo.html" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="img/front2.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="Atta.html" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Laddo</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="index.html">Home</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Laddoo</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+	<!-- Shop Detail Start -->
+	<div class="container-fluid py-5">
+		<div class="row px-xl-5">
+			<div class="col-lg-5 pb-5">
+				<div id="product-carousel" class="carousel slide"
+					data-ride="carousel">
+					<div class="carousel-inner border">
+						<div class="carousel-item active">
+							<img class="w-100 h-100" src="img/l2.jpg" alt="Image">
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-lg-7 pb-5">
+				<form class="add-to-cart-form">
+					<h3 class="font-weight-semi-bold product-name">Murmura Ladoo</h3>
+					<div class="d-flex mb-3">
+						<div class="text-primary mr-2">
+							<small class="fas fa-star"></small> <small class="fas fa-star"></small>
+							<small class="fas fa-star"></small> <small
+								class="fas fa-star-half-alt"></small> <small class="far fa-star"></small>
+						</div>
+						<small class="pt-1">(150 Reviews)</small>
+					</div>
+					<h6>2/Kg</h6>
+					<h3 class="font-weight-semi-bold mb-4 product-price">₹59.00</h3>
+					<p class="mb-4">Murmura Ladoo Recipe: Crispy ladoos made with puffed rice and molten jaggery. Though puffed rice is not really nutritionally rich, it is light on the stomach and low in calories. Murmura Ladoos made of puffed rice are quite filling and are among one of the most loved sweet treats of the country</p>
+
+					<div class="d-flex align-items-center mb-4 pt-2">
+						<div class="input-group quantity mr-3" style="width: 130px;">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-primary btn-minus">
+									<i class="fa fa-minus"></i>
+								</button>
+							</div>
+							<input type="text"
+								class="form-control bg-secondary text-center product-quantity"
+								value="1">
+							<div class="input-group-btn">
+								<button type="button" class="btn btn-primary btn-plus">
+									<i class="fa fa-plus"></i>
+								</button>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary px-3">
+							<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+						</button>
+					</div>
+					<div class="d-flex pt-2">
+						<p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
+						<div class="d-inline-flex">
+							<a class="text-dark px-2" href=""> <i
+								class="fab fa-facebook-f"></i>
+							</a> <a class="text-dark px-2" href=""> <i class="fab fa-twitter"></i>
+							</a> <a class="text-dark px-2" href=""> <i
+								class="fab fa-pinterest"></i>
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+
+		<div class="container-fluid py-5">
+			<div class="row px-xl-5">
+				<div class="col-lg-5 pb-5">
+					<div id="product-carousel" class="carousel slide"
+						data-ride="carousel">
+						<div class="carousel-inner border">
+							<div class="carousel-item active">
+								<img class="w-100 h-100" src="img/l5.jpg" alt="Image">
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-7 pb-5">
+					<form class="add-to-cart-form">
+						<h3 class="font-weight-semi-bold product-name">Rajgira Chikki</h3>
+						<div class="d-flex mb-3">
+							<div class="text-primary mr-2">
+								<small class="fas fa-star"></small> <small class="fas fa-star"></small>
+								<small class="fas fa-star"></small> <small
+									class="fas fa-star-half-alt"></small> <small
+									class="far fa-star"></small>
+							</div>
+							<small class="pt-1">(150 Reviews)</small>
+						</div>
+						<h6>2/Kg</h6>
+						<h3 class="font-weight-semi-bold mb-4 product-price">₹149.00</h3>
+						<p class="mb-4">Rajgira Chikki is crispy, sweet, and nutty and the combination of amaranth seeds and jaggery. 
+						A great delight for the taste buds, it has a rich and enriching taste. The jaggery blends well with the amaranth 
+						seeds that taste grainy and the nutty taste of cashew nuts. This Rajgira Chikki for babies is one of the best desserts 
+						or snacks you can offer to your growing munchkin.
+						Rajgira seeds or amaranth seeds are rich in Vitamin C. They are rich in iron, calcium, magnesium, potassium, and phosphorous.
+The amount of calcium in Rajgira seeds is double that of what milk contains making it very beneficial for the healthy development of bones.
+The iron content is good to help in treating anemia.
+						</p>
+
+						<div class="d-flex align-items-center mb-4 pt-2">
+							<div class="input-group quantity mr-3" style="width: 130px;">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-primary btn-minus">
+										<i class="fa fa-minus"></i>
+									</button>
+								</div>
+								<input type="text"
+									class="form-control bg-secondary text-center product-quantity"
+									value="1">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-primary btn-plus">
+										<i class="fa fa-plus"></i>
+									</button>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary px-3">
+								<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+							</button>
+						</div>
+						<div class="d-flex pt-2">
+							<p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
+							<div class="d-inline-flex">
+								<a class="text-dark px-2" href=""> <i
+									class="fab fa-facebook-f"></i>
+								</a> <a class="text-dark px-2" href=""> <i
+									class="fab fa-twitter"></i>
+								</a> <a class="text-dark px-2" href=""> <i
+									class="fab fa-pinterest"></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+
+			<div class="container-fluid py-5">
+				<div class="row px-xl-5">
+					<div class="col-lg-5 pb-5">
+						<div id="product-carousel" class="carousel slide"
+							data-ride="carousel">
+							<div class="carousel-inner border">
+								<div class="carousel-item active">
+									<img class="w-100 h-100" src="img/l4.jpg" alt="Image">
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-7 pb-5">
+						<form class="add-to-cart-form">
+							<h3 class="font-weight-semi-bold product-name">Motichoor Ladoo</h3>
+							<div class="d-flex mb-3">
+								<div class="text-primary mr-2">
+									<small class="fas fa-star"></small> <small class="fas fa-star"></small>
+									<small class="fas fa-star"></small> <small
+										class="fas fa-star-half-alt"></small> <small
+										class="far fa-star"></small>
+								</div>
+								<small class="pt-1">(150 Reviews)</small>
+							</div>
+							<h6>2/Kg</h6>
+							<h3 class="font-weight-semi-bold mb-4 product-price">₹379.00</h3>
+							<p class="mb-4">Motichur laddu are soft, delish melt in the mouth ladoo made mainly with gram flour, sugar, and spices. The gram flour batter is fried to make tiny balls or boondi and mixed with sugar syrup, nuts or seeds and later shaped to neat round balls. Motichoor ladoo is a popular sweet from the North Indian cuisine and often made during festivals or celebrations. Here I share my detailed step-by-step photos to make these soft, tender and tasty homemade laddu recipe from scratch.</p>
+
+							<div class="d-flex align-items-center mb-4 pt-2">
+								<div class="input-group quantity mr-3" style="width: 130px;">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-primary btn-minus">
+											<i class="fa fa-minus"></i>
+										</button>
+									</div>
+									<input type="text"
+										class="form-control bg-secondary text-center product-quantity"
+										value="1">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-primary btn-plus">
+											<i class="fa fa-plus"></i>
+										</button>
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary px-3">
+									<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+								</button>
+							</div>
+							<div class="d-flex pt-2">
+								<p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
+								<div class="d-inline-flex">
+									<a class="text-dark px-2" href=""> <i
+										class="fab fa-facebook-f"></i>
+									</a> <a class="text-dark px-2" href=""> <i
+										class="fab fa-twitter"></i>
+									</a> <a class="text-dark px-2" href=""> <i
+										class="fab fa-pinterest"></i>
+									</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+
+
+				<div class="container-fluid py-5">
+					<div class="row px-xl-5">
+						<div class="col-lg-5 pb-5">
+							<div id="product-carousel" class="carousel slide"
+								data-ride="carousel">
+								<div class="carousel-inner border">
+									<div class="carousel-item active">
+										<img class="w-100 h-100" src="img/l6.jpg" alt="Image">
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-lg-7 pb-5">
+							<form class="add-to-cart-form">
+								<h3 class="font-weight-semi-bold product-name">Rajgira Ladoo</h3>
+								<div class="d-flex mb-3">
+									<div class="text-primary mr-2">
+										<small class="fas fa-star"></small> <small class="fas fa-star"></small>
+										<small class="fas fa-star"></small> <small
+											class="fas fa-star-half-alt"></small> <small
+											class="far fa-star"></small>
+									</div>
+									<small class="pt-1">(150 Reviews)</small>
+								</div>
+								<h6>2/Kg</h6>
+								<h3 class="font-weight-semi-bold mb-4 product-price">₹259.00</h3>
+								<p class="mb-4">Rajgira ladoo is a healthy and delicious sweet ball made from popped amaranth seeds and jaggery. Rajgira ladoo is a gluten-free , calcium-rich , protein and fiber rich snack that can be had at any time of the day. Made with just 3 ingredients, making these rajgira ladoos is a breeze if you have popped seeds ready at hand. The recipe is very simple and does not call for checking the right jaggery syrup string consistency. You just melt the jaggery, add the popped seeds and roll them. These rajgira ladoos are soft and nutritious and make a perfect snack for all ages including toddlers and the elderly.</p>
+
+								<div class="d-flex align-items-center mb-4 pt-2">
+									<div class="input-group quantity mr-3" style="width: 130px;">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-primary btn-minus">
+												<i class="fa fa-minus"></i>
+											</button>
+										</div>
+										<input type="text"
+											class="form-control bg-secondary text-center product-quantity"
+											value="1">
+										<div class="input-group-btn">
+											<button type="button" class="btn btn-primary btn-plus">
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+									<button type="submit" class="btn btn-primary px-3">
+										<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+									</button>
+								</div>
+								<div class="d-flex pt-2">
+									<p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
+									<div class="d-inline-flex">
+										<a class="text-dark px-2" href=""> <i
+											class="fab fa-facebook-f"></i>
+										</a> <a class="text-dark px-2" href=""> <i
+											class="fab fa-twitter"></i>
+										</a> <a class="text-dark px-2" href=""> <i
+											class="fab fa-pinterest"></i>
+										</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+
+					<div class="container-fluid py-5">
+						<div class="row px-xl-5">
+							<div class="col-lg-5 pb-5">
+								<div id="product-carousel" class="carousel slide"
+									data-ride="carousel">
+									<div class="carousel-inner border">
+										<div class="carousel-item active">
+											<img class="w-100 h-100" src="img/l1.jpg" alt="Image">
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-lg-7 pb-5">
+								<form class="add-to-cart-form">
+									<h3 class="font-weight-semi-bold product-name">Wheat Ladoo</h3>
+									<div class="d-flex mb-3">
+										<div class="text-primary mr-2">
+											<small class="fas fa-star"></small> <small
+												class="fas fa-star"></small> <small class="fas fa-star"></small>
+											<small class="fas fa-star-half-alt"></small> <small
+												class="far fa-star"></small>
+										</div>
+										<small class="pt-1">(150 Reviews)</small>
+									</div>
+									<h6>2/Kg</h6>
+									<h3 class="font-weight-semi-bold mb-4 product-price">
+								 
+									 <span>₹</span>
+									 
+									 159.00</h3>
+									<p class="mb-4">
+									
+									wheat flour is a versatile ingredient. The proof of the pudding lies in the fact that it can be used to make dishes, ranging from savory/salty to sweet. Just like this Atta Laddu or Atta Ladoo, which is made with whole wheat flour and just 2 more ingredients. These delicious Wheat Ladoo recipe is easy and gets made quickly
+									</p>
+
+									<div class="d-flex align-items-center mb-4 pt-2">
+										<div class="input-group quantity mr-3" style="width: 130px;">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-primary btn-minus">
+													<i class="fa fa-minus"></i>
+												</button>
+											</div>
+											<input type="text"
+												class="form-control bg-secondary text-center product-quantity"
+												value="1">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-primary btn-plus">
+													<i class="fa fa-plus"></i>
+												</button>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary px-3">
+											<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+										</button>
+									</div>
+									<div class="d-flex pt-2">
+										<p class="text-dark font-weight-medium mb-0 mr-2">Share
+											on:</p>
+										<div class="d-inline-flex">
+											<a class="text-dark px-2" href=""> <i
+												class="fab fa-facebook-f"></i>
+											</a> <a class="text-dark px-2" href=""> <i
+												class="fab fa-twitter"></i>
+											</a> <a class="text-dark px-2" href=""> <i
+												class="fab fa-pinterest"></i>
+											</a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+				
+
+
+
+	<div class="container-fluid py-5">
+						<div class="row px-xl-5">
+							<div class="col-lg-5 pb-5">
+								<div id="product-carousel" class="carousel slide"
+									data-ride="carousel">
+									<div class="carousel-inner border">
+										<div class="carousel-item active">
+											<img class="w-100 h-100" src="img/l3.jpg" alt="Image">
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-lg-7 pb-5">
+								<form class="add-to-cart-form">
+									<h3 class="font-weight-semi-bold product-name">Besan Ladoo</h3>
+									<div class="d-flex mb-3">
+										<div class="text-primary mr-2">
+											<small class="fas fa-star"></small> <small
+												class="fas fa-star"></small> <small class="fas fa-star"></small>
+											<small class="fas fa-star-half-alt"></small> <small
+												class="far fa-star"></small>
+										</div>
+										<small class="pt-1">(150 Reviews)</small>
+									</div>
+									<h6>2/Kg</h6>
+									<h3 class="font-weight-semi-bold mb-4 product-price">
+									<span>₹</span>
+									 
+									 159.00</h3>
+									<p class="mb-4">
+									Besan Ladoo is a popular Indian sweet made from gram flour a.k.a besan, powdered sugar and clarified butter (ghee). Also known as Besan ke Laddu these are round sweet balls made by roasting gram flour and ghee together, and then adding sugar to make a thick pasty dough – that is then formed into delicious, melt-in-your-mouth balls. Make this decadent sweet during festivals like Diwali or Ganesh Chaturthi with my easy fail-proof recipe									 
+									
+									</p>
+
+									<div class="d-flex align-items-center mb-4 pt-2">
+										<div class="input-group quantity mr-3" style="width: 130px;">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-primary btn-minus">
+													<i class="fa fa-minus"></i>
+												</button>
+											</div>
+											<input type="text"
+												class="form-control bg-secondary text-center product-quantity"
+												value="1">
+											<div class="input-group-btn">
+												<button type="button" class="btn btn-primary btn-plus">
+													<i class="fa fa-plus"></i>
+												</button>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary px-3">
+											<i class="fa fa-shopping-cart mr-1"></i> Add To Cart
+										</button>
+									</div>
+									<div class="d-flex pt-2">
+										<p class="text-dark font-weight-medium mb-0 mr-2">Share
+											on:</p>
+										<div class="d-inline-flex">
+											<a class="text-dark px-2" href=""> <i
+												class="fab fa-facebook-f"></i>
+											</a> <a class="text-dark px-2" href=""> <i
+												class="fab fa-twitter"></i>
+											</a> <a class="text-dark px-2" href=""> <i
+												class="fab fa-pinterest"></i>
+											</a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						
+				
+
+
+  
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="nav nav-tabs justify-content-center border-secondary mb-4">
+                    <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab-pane-1">
+                        <h3 class="mb-3">Product Description</h3>
+                        <h6>
+                           Laddu is an Indian sweet made with any one of a number of different kinds of flour and shaped into small balls for serving. In English it is also sometimes spelled laddoo or ladoo. The sweet can be made from both grain and legume flours and often has nuts or dried fruit added. It is particularly popular as a treat for festivals and special occasions.
+                           One of the most popular varieties is boondi laddu. The primary ingredient is gram flour, made from garbanzo beans. Gram flour, sometimes called besan, is mixed with milk to make a thick batter. The batter is then forced through a strainer into hot oil, making small drops, or balls, of batter which quickly cook in the oil. Once all the drops are cooked and slightly cooled, they are mixed with a sticky, cardamom flavored sugar syrup and formed into balls a bit smaller than a golf ball.
+                           One common variety, Besan laddu, is also made from gram flour, but is prepared differently. In this case the flour is slowly browned in ghee, a clarified butter used in Indian cooking. After the flour is golden brown and fragrant, it is mixed with sugar and cardamom powder, and formed into small balls.
+                        </h6>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Detail End -->
+
+
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border border-white px-3 mr-1">Mini</span>Market</h1>
+                </a>
+                <p>Shop No 2, Ward No-46,Aaudumber Nivas,Kalyan navi mumbai Road,Anandwadi,Mumbai 431501</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Kalyan, Mumbai, India</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>minimarket007@gmail.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            </div>
+         
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Social</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="https://www.facebook.com/"><i
+                                    class="fa fa-angle-right mr-2"></i>FaceBook</a>
+                            <a class="text-dark mb-2" href="https://www.instagram.com"><i
+                                    class="fa fa-angle-right mr-2"></i>Instagram</a>
+                            <a class="text-dark" href="https://accounts.google.com/"><i
+                                    class="fa fa-angle-right mr-2"></i>You Tube</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                   
+                        <h5 class="font-weight-bold text-dark mb-4">Enquiry</h5>
+                         <p>Regarding shipping,Payment,Return & Cancllation</p>
+                        <form th:action="@{/help}" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" name="name" placeholder="Your Name"
+                                    required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" name="email" placeholder="Mobile No"
+                                    required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Call Us</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer End -->
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+            <!-- JavaScript Libraries -->
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+            <script src="lib/easing/easing.min.js"></script>
+            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+            <!-- Contact Javascript File -->
+            <script src="mail/jqBootstrapValidation.min.js"></script>
+            <script src="mail/contact.js"></script>
+
+            <!-- Template Javascript add to cart -->
+            <script src="js/main.js"></script>
+            <script src="js/addToCart.js"></script>
+</body>
+
+</html>

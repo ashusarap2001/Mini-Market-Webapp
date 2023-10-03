@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Mini Market</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet">
+
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/order.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Topbar Start -->
+
+	<div class="row align-items-center py-3 px-xl-5">
+		<div class="col-lg-3 d-none d-lg-block">
+			<a href="" class="text-decoration-none">
+				<h1 class="m-0 display-5 font-weight-semi-bold">
+					<span class="text-primary font-weight-bold border px-3 mr-1">Mini</span>Market
+				</h1>
+			</a>
+		</div>
+
+
+	</div>
+	</div>
+	<!-- Topbar End -->
+
+
+	
+<input type="hidden" id="msg" th:value="${session.cancel}" />
+
+	<!-- Page Header Start -->
+	<div class="container-fluid bg-secondary mb-5">
+		<div
+			class="d-flex flex-column align-items-center justify-content-center"
+			style="min-height: 300px">
+			<h1 class="font-weight-semi-bold text-uppercase mb-3">Cancel Reason</h1>
+			<div class="d-inline-flex">
+				<p class="m-0">
+					<a href="index.html">Home</a>
+				</p>
+				<p class="m-0 px-2">-</p>
+				<p class="m-0">Order Cancel</p>
+				
+			</div>
+		
+			
+		</div>
+	</div>
+	<!-- Page Header End -->
+	<br><br>
+	<div style="padding-left: 160px">
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="
+    ">Expected delivery date has changed and the product is arriving at a later date.
+  </label>
+</div>
+<br><br>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="
+    ">Product is not required anymore.
+  </label>
+</div>
+<br><br>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="
+    ">The price of the product has fallen due to sales/discounts and customer wants to get it at a lesser price.
+  </label>
+</div>
+<br><br>
+<div class="form-check-inline">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" value="T
+    ">
+  </label>Bad review from friends/relatives after ordering the product.
+</div>
+<br><br>
+<a th:href="@{index.html}" class="btn btn-sm btn-danger">Home</a>
+</div>
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-primary back-to-top"><i
+		class="fa fa-angle-double-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+	<!-- Contact Javascript File -->
+	<script src="mail/jqBootstrapValidation.min.js"></script>
+	<script src="mail/contact.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+	
+	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="/alert/dist/sweetalert.css">
+
+	<script type="text/javascript">
+		var status = document.getElementById("msg").value;
+		if (status == "cancel") {
+			swal("Ordered has been canceled","😭");
+
+		}
+	</script>;
+	 
+<th:block th:inline="text"> [[${#session.removeAttribute('cancel')}]]</th:block>
+	
+	
+	
+</body>
+
+</html>

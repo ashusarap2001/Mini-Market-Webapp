@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<title>Mini Market</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="Free HTML Templates" name="keywords">
+<meta content="Free HTML Templates" name="description">
+
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet">
+
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="/css/style.css" rel="stylesheet">
+<link href="/css/order.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Topbar Start -->
+
+	<div class="row align-items-center py-3 px-xl-5">
+		<div class="col-lg-3 d-none d-lg-block">
+			<a href="" class="text-decoration-none">
+				<h1 class="m-0 display-5 font-weight-semi-bold">
+					<span class="text-primary font-weight-bold border px-3 mr-1">Mini</span>Market
+				</h1>
+			</a>
+		</div>
+
+
+	</div>
+	</div>
+	<!-- Topbar End -->
+
+
+	<!-- Navbar Start -->
+	<div class="container-fluid mb-5">
+		<div class="row border-top px-xl-5">
+			<div class="col-lg-9">
+				<nav
+					class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+					<a href="" class="text-decoration-none d-block d-lg-none">
+						<h1 class="m-0 display-5 font-weight-semi-bold">
+							<span class="text-primary font-weight-bold border px-3 mr-1">Mini</span>Market
+						</h1>
+					</a>
+					<button type="button" class="navbar-toggler" data-toggle="collapse"
+						data-target="#navbarCollapse">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-between"
+						id="navbarCollapse">
+						<div class="navbar-nav mr-auto py-0">
+							<a href="index.html" class="nav-item nav-link active">Home</a> <a
+								href="detail.html" class="nav-item nav-link active">Shop
+								Detail</a> <a href="contact.html" class="nav-item nav-link">Contact</a>
+						</div>
+						<div class="navbar-nav ml-auto py-0">
+							<a href="/logout" class="nav-item nav-link">Logout</a> 								
+						</div>
+
+					</div>
+				</nav>
+
+
+
+			</div>
+		</div>
+	</div>
+	</div>
+	<!-- Navbar End -->
+<input type="hidden" id="msg" th:value="${session.order}" />
+
+	<!-- Page Header Start -->
+	<div class="container-fluid bg-secondary mb-5">
+		<div
+			class="d-flex flex-column align-items-center justify-content-center"
+			style="min-height: 300px">
+			<h1 class="font-weight-semi-bold text-uppercase mb-3">Order
+				Status</h1>
+			<div class="d-inline-flex">
+				<p class="m-0">
+					<a href="index.html">Home</a>
+				</p>
+				<p class="m-0 px-2">-</p>
+				<p class="m-0">Order Status</p>
+				
+			</div>
+			<br>
+			<br>
+			<h5 class="font-weight-semi-bold text-uppercase mb-3">Thanks For Shopping</h5>
+			
+		</div>
+	</div>
+	<!-- Page Header End -->
+
+
+	<!-- Table start -->
+	<h2>Responsive Table</h2>
+	<div class="table-wrapper">
+		<table class="fl-table">
+			<thead>
+				<tr>
+					<th>Order Id</th>
+					<th>Order Data</th>
+					<th>Delivery Date</th>
+					<th>total price</th>
+					<th>Payment Mode</th>
+					<th>Address</th>
+					<th>Return To Home</th>
+					<th>Cancel Order</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr th:each="add: ${add}">
+				<td>#5050506050<span th:text="${genrated_number}"></span>
+				</td>
+				<td><span th:text="${dd}"></span></td>
+				<td>  <span th:text="${datee}"></span></td>
+				<td><span th:text="${final_price}"></span></td>
+				<td>COD</td>
+				<td>[[${add.fname}]][[${add.lname}]] <br> [[${add.add_1}]]<br>[[${add.add_2}]]
+					<br> [[${add.city}]] [[${add.state}]] <br>
+					[[${add.mobile}]]
+				</td>
+				<td class="align-middle"><a href="/index.html" class="btn btn-sm btn-primary">Click Here</a></td>
+				<td class="align-middle">
+				<a th:href="@{'delete_ooo/'+${add.id}}" class="btn btn-sm btn-danger">Cancel</a>
+				</td>
+			</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+
+
+	<!-- Table End -->
+
+
+	<!-- Back to Top -->
+	<a href="#" class="btn btn-primary back-to-top"><i
+		class="fa fa-angle-double-up"></i></a>
+
+
+	<!-- JavaScript Libraries -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+	<!-- Contact Javascript File -->
+	<script src="mail/jqBootstrapValidation.min.js"></script>
+	<script src="mail/contact.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+	
+	
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="/alert/dist/sweetalert.css">
+
+	<script type="text/javascript">
+		var status = document.getElementById("msg").value;
+		if (status == "orderr") {
+			swal("Ordered has been placed ","Thanks For Shopping 😊");
+
+		}
+	</script>;
+	 
+<th:block th:inline="text"> [[${#session.removeAttribute('order')}]]</th:block>
+	
+	
+	
+</body>
+
+</html>
